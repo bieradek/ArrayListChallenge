@@ -1,10 +1,7 @@
 package com.timbuchalka;
 
-import java.util.Scanner;
 
 public class Main {
-    private static Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
         // Create a program that implements a simple mobile phone with the following capabilities.
         // Able to store, modify, remove and query contact names.
@@ -19,7 +16,6 @@ public class Main {
         // e.g. no ints, no .get(i) etc
         // MobilePhone should do everything with Contact objects only.
 
-        MobilePhone iPhone = new MobilePhone("Apple", "iPhone XS");
     }
 
     public static void printInstructions() {

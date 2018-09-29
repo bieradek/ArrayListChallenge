@@ -1,20 +1,23 @@
 package com.timbuchalka;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MobilePhone {
+    private static Scanner scanner = new Scanner(System.in);
     private String brand;
     private String model;
-    private static ArrayList<String> contactList = new ArrayList<String>();
+    private ArrayList<String> contactList = new ArrayList<String>();
 
-    public MobilePhone(String brand, String model) {
+    public MobilePhone(String brand, String model, ArrayList<String> contactList) {
         this.brand = brand;
         this.model = model;
+        this.contactList = contactList;
     }
 
-    public static void addContact(String contactName, int contactNumber) {
-        System.out.print("Please enter the contact details(name and number) item: ");
-        contactList.add()
+    public static void addContact() {
+        System.out.print("Please enter the contact name: ");
+        contactList.add(scanner.nextLine());
 //        groceryList.addGroceryItem(scanner.nextLine());
     }
 
@@ -41,5 +44,29 @@ public class MobilePhone {
 //        } else {
 //            System.out.println(searchItem + " is not in the list");
 //        }
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public static ArrayList<Contacts> getContactList() {
+        return contactList;
+    }
+
+    public static void setContactList(ArrayList<Contacts> contactList) {
+        MobilePhone.contactList = contactList;
     }
 }
