@@ -57,6 +57,23 @@ public class Main {
 
     }
 
+    public static void startPhone() {
+        System.out.println("Starting phone...");
+    }
+
+    private static void printActions() {
+        System.out.println("\nAvailable actions:\npress");
+        System.out.println(
+                "0 - to shutdown\n" +
+                        "1 - to print contacts\n" +
+                        "2 - to add a new contact\n" +
+                        "3 - to update existing contact\n" +
+                        "4 - to remove a contact\n" +
+                        "5 - query if existing contact exists\n" +
+                        "6 - PRINT A LIST OF AVAILABLE ACTIONS.");
+        System.out.println("Choose your actions: ");
+    }
+
     private static void addNewContact() {
         System.out.println("Enter new contact name");
         String name = scanner.nextLine();
@@ -114,22 +131,5 @@ public class Main {
             return;
         }
         System.out.println("Name: " + existingContactRecord.getName() + " phone number " + existingContactRecord.getPhoneNumber());
-    }
-
-    public static void startPhone() {
-        System.out.println("Starting phone...");
-    }
-
-    private static void printActions() {
-        System.out.println("\nAvailable actions:\npress");
-        System.out.println(
-                "0 - to shutdown\n" +
-                        "1 - to print contacts\n" +
-                        "2 - to add a new contact\n" +
-                        "3 - to update existing contact\n" +
-                        "4 - to remove a contact\n" +
-                        "5 - query if existing contact exists\n" +
-                        "6 - PRINT A LIST OF AVAILABLE ACTIONS.");
-        System.out.println("Choose your actions: ");
     }
 }

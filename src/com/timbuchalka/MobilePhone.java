@@ -13,6 +13,13 @@ public class MobilePhone {
         this.myContacts = new ArrayList<Contact>();
     }
 
+    public void printContacts() {
+        System.out.println("Contact list");
+        for (int i = 0; i < this.myContacts.size(); i++) {
+            System.out.println((i + 1) + "." + this.myContacts.get(i).getName() + " -> " + this.myContacts.get(i).getPhoneNumber());
+        }
+    }
+
     public boolean addNewContact(Contact contact) {
         if (findContact(contact.getName()) >= 0) { // we're using the method which accepts String as a parameter
             System.out.println("Contact is already on file");
@@ -47,6 +54,14 @@ public class MobilePhone {
         return true;
     }
 
+    public Contact queryContact(String name) {
+        int position = findContact(name);
+        if (position >= 0) {
+            return this.myContacts.get(position);
+        }
+        return null;
+    }
+
     private int findContact(Contact contact) {
         return this.myContacts.indexOf(contact); // return the position of the element
     }
@@ -61,62 +76,10 @@ public class MobilePhone {
         return -1;
     }
 
-    public void printContacts() {
-        System.out.println("Contact list");
-        for (int i = 0; i < this.myContacts.size(); i++) {
-            System.out.println((i + 1) + "." + this.myContacts.get(i).getName() + " -> " + this.myContacts.get(i).getPhoneNumber());
-        }
-    }
-
     public String queryContact(Contact contact) {
         if (findContact(contact) >= 0) {
             return contact.getName();
         }
         return null;
     }
-
-    public Contact queryContact(String name) {
-        int position = findContact(name);
-        if (position >= 0) {
-            return this.myContacts.get(position);
-        }
-        return null;
-    }
-
-    public ArrayList<Contact> getMyContacts() {
-        return myContacts;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    //    public static void modifyContact() {
-//        System.out.println("Current item");
-////        String itemNo = scanner.nextLine();
-//        System.out.println("Enter replacement item");
-////        String newItem = scanner.nextLine();
-////        groceryList.modifyGroceryItem(itemNo, newItem);
-//    }
-//
-//    public static void removeContact() {
-//        System.out.println("enter item number");
-////        String itemNo = scanner.nextLine();
-////        scanner.nextLine();
-////        groceryList.removeGroceryItem(itemNo);
-//    }
-//
-//    public static void queryContact() {
-//        System.out.print("Item to search for: ");
-////        String searchItem = scanner.nextLine();
-////        if (groceryList.onFile(searchItem)) {
-////            System.out.println("Found " + searchItem + " in our grocery list");
-////        } else {
-////            System.out.println(searchItem + " is not in the list");
-////        }
-//    }
 }
